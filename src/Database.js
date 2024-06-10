@@ -11,6 +11,19 @@ class Database {
 
     localStorage.setItem(key, JSON.stringify(newData));
   };
-  find = () => {};
-  delete = () => {};
+
+    find = (key) => {
+      return JSON.parse(localStorage.getItem(key));
+    };
+    
+    /**
+     * delete todos
+     */
+    delete = (key, deleteData) => {
+        const oldData = JSON.parse(localStorage.getItem(key));
+        
+        const updateData = oldData.filter((data) => data !== deleteData);
+
+        localStorage.setItem(key, JSON.stringify(updateData));
+  };
 }
