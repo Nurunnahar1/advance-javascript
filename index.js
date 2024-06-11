@@ -7,7 +7,7 @@ const db = new Database();
  * Get all Todos*
  *  */
 const getAllTodos = () => {
-  const data = db.find("todos");
+  const data = db.find("todos") || []; // Initialize data to an empty array if null
 
   let list = "";
   data.map((item, index) => {
