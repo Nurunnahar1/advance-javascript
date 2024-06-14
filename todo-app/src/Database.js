@@ -12,18 +12,18 @@ class Database {
     localStorage.setItem(key, JSON.stringify(newData));
   };
 
-    find = (key) => {
-      return JSON.parse(localStorage.getItem(key));
-    };
-    
-    /**
-     * delete todos
-     */
-    delete = (key, deleteData) => {
-        const oldData = JSON.parse(localStorage.getItem(key));
-        
-        const updateData = oldData.filter((data) => data !== deleteData);
+  find = (key) => {
+    return JSON.parse(localStorage.getItem(key));
+  };
 
-        localStorage.setItem(key, JSON.stringify(updateData));
+  /**
+   * delete todos
+   */
+  delete = (key, deleteData) => {
+    const oldData = JSON.parse(localStorage.getItem(key));
+
+    const updateData = oldData.filter((data) => data !== deleteData);
+
+    localStorage.setItem(key, JSON.stringify(updateData));
   };
 }
